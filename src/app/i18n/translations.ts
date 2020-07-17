@@ -1,6 +1,6 @@
 export const k = {
-	WELCOME: {
-		DE: "Willkommen",
-		EN: "Welcome"
-	}
+  APP_NAME: {
+    DE: "sharkme",
+    EN: "sharkme",
+  },
 };
