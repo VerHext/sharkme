@@ -6,6 +6,7 @@ import { store } from "./app/redux/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import { keycloakClient } from "./app/utils";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const login = async () => {
   const token = await keycloakClient.login();
@@ -24,7 +25,6 @@ const StartApp = () => {
     <React.StrictMode>
       <Provider store={store}>
         <App />
-        <button onClick={() => keycloakClient.logout()}>LOGOUT</button>
       </Provider>
     </React.StrictMode>,
     document.getElementById("root")

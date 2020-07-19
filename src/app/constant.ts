@@ -4,6 +4,7 @@ export const UPDATE_INTERVAL = 3600000; // 1 hour in milliseconds
 export const SESSION_REFRESH_RETRY_MAX = 3;
 export const SESSION_REFRESH_RETRY_DELAY = 300;
 
+export const API_URL = "http://localhost:8089";
 export const KEYCLOAK_INSTANCE_OPTIONS = {
   url: "https://auth.sharkme.de/auth",
   realm: "sharkme",

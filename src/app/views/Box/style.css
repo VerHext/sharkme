@@ -1,0 +1,23 @@
+.divider {
+  width: 100%;
+  height: 6px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #3a96bb;
+}
+.btn-open-cardbox {
+  height: 40px;
+}
+.boxitem {
+  height: 300px;
+}
+.badge-sharkme {
+  background-color: #3a96bb;
+  color: white;
+  font-size: 14px !important;
+}
+.cardbox-btn-group {
+  position: absolute;
+  bottom: 20px;
+}
