@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { k, l } from "../../i18n";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,7 +14,7 @@ export default function EmailChange(props: any) {
 
   const updateEmail = () => {
     setError({ data: "", error: true });
-    if (useEmail == "") {
+    if (useEmail === "") {
       setError({ data: `${l(k.EMAIL_EMPTY)}`, error: true });
       return;
     }
@@ -27,12 +27,12 @@ export default function EmailChange(props: any) {
           <h4 className="card-title">{l(k.CHANGE_EMAIL)}</h4>
           <ErrorBanner useError={useError} />
 
-          {store.emailUpdateStatus == 200 ? (
+          {store.emailUpdateStatus === 200 ? (
             <ErrorBanner
               useError={{ data: `${l(k.EMAIL_UPDATED)}`, error: false }}
             />
           ) : null}
-          {store.emailUpdateStatus != 200 && store.emailUpdateStatus != 0 ? (
+          {store.emailUpdateStatus !== 200 && store.emailUpdateStatus !== 0 ? (
             <ErrorBanner
               useError={{ data: `${l(k.EMAIL_UPDATE_ERROR)}`, error: true }}
             />

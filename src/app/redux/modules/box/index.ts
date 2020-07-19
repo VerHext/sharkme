@@ -8,11 +8,15 @@ import ICard from "../../../models/ICard";
 interface CounterState {
   date: IBox[];
   cards: ICard[];
+  boxTemp: string;
+  search: string;
 }
 
 const initialState: CounterState = {
   date: [] as IBox[],
   cards: [] as ICard[],
+  boxTemp: "" as string,
+  search: "" as string,
 };
 
 export const counterSlice = createSlice({
@@ -25,10 +29,21 @@ export const counterSlice = createSlice({
     setCardByBox: (state, action: PayloadAction<any>) => {
       state.cards = action.payload as ICard[];
     },
+    setBoxTemp: (state, action: PayloadAction<any>) => {
+      state.boxTemp = action.payload;
+    },
+    setSearch: (state, action: PayloadAction<any>) => {
+      state.search = action.payload;
+    },
   },
 });
 
-export const { setApiResponse, setCardByBox } = counterSlice.actions;
+export const {
+  setApiResponse,
+  setCardByBox,
+  setBoxTemp,
+  setSearch,
+} = counterSlice.actions;
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This

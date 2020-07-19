@@ -6,7 +6,6 @@ import * as redux from "../../redux/modules/user";
 import ErrorBanner from "./ErrorBanner";
 
 export default function DataChange(props: any) {
-  const user = useSelector(redux.selectData);
   const store = useSelector(redux.selectStore);
   const dispatch = useDispatch();
   const [useError, setError] = useState({ data: "", error: true });
@@ -15,11 +14,11 @@ export default function DataChange(props: any) {
 
   const updatePassword = (password: string, password2: string) => {
     setError({ data: "", error: true });
-    if (password != password2) {
+    if (password !== password2) {
       setError({ data: `${l(k.PASSWORD_NOT_SELF)}`, error: true });
       return;
     }
-    if (password == "") {
+    if (password === "") {
       setError({ data: `${l(k.PASSWORD_EMPTY)}`, error: true });
       return;
     }
@@ -33,13 +32,13 @@ export default function DataChange(props: any) {
           <h4 className="card-title">{l(k.PASSWORD_CHANGE)}</h4>
           <ErrorBanner useError={useError} />
 
-          {store.passwordUpdateStatus == 200 ? (
+          {store.passwordUpdateStatus === 200 ? (
             <ErrorBanner
               useError={{ data: `${l(k.PASSWORD_CHANGE)}`, error: false }}
             />
           ) : null}
-          {store.passwordUpdateStatus != 200 &&
-          store.passwordUpdateStatus != 0 ? (
+          {store.passwordUpdateStatus !== 200 &&
+          store.passwordUpdateStatus !== 0 ? (
             <ErrorBanner
               useError={{ data: `${l(k.PASSWORD_UPDATE_ERROR)}`, error: true }}
             />

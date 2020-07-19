@@ -1,8 +1,7 @@
 import React from "react";
 import "./style.css";
 import { k, l } from "../../i18n";
-import IUser from "../../models/IUser";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import * as reduxUser from "../../redux/modules/user";
 import Logout from "./LogoutItem";
 import { Link } from "react-router-dom";
@@ -35,20 +34,21 @@ export default function Header(props: any) {
               </Link>
             </li>
             <li className="nav-item" role="presentation">
-              <a className="nav-link" href="#">
+              <Link to={"/"} className="nav-link">
                 <i className="material-icons">sentiment_very_satisfied</i>
                 {l(k.LEARN)}
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a
                 className="dropdown-toggle nav-link avatar-link"
                 data-toggle="dropdown"
                 aria-expanded="false"
-                href="#"
+                href="/"
               >
                 <img
                   className="rounded-circle avatar"
+                  alt="avatar"
                   src={
                     "https://avatar.support-pp.de/avatar?size=128&amp;name=" +
                     data.fname +
@@ -60,9 +60,9 @@ export default function Header(props: any) {
                 <Link className={"dropdown-item"} to={"/app/profile"}>
                   {data.fname + " " + data.lname}
                 </Link>
-                <a className="dropdown-item" role="presentation" href="#">
+                <Link className="dropdown-item" role="presentation" to="">
                   Second Item
-                </a>
+                </Link>
                 <Logout />
               </div>
             </li>

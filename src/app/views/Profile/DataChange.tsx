@@ -15,14 +15,14 @@ export default function DataChange(props: any) {
 
   const updateName = () => {
     setError({ data: "", error: true });
-    if (useFname == useLname) {
+    if (useFname === useLname) {
       setError({
         data: `${l(k.FNAME_NOT_SELF_AS_LNAME_UPDATE_ERROR)}`,
         error: true,
       });
       return;
     }
-    if (useFname == "" || useLname == "") {
+    if (useFname === "" || useLname === "") {
       setError({ data: `${l(k.NAME_EMPTY_UPDATE_ERROR)}`, error: true });
       return;
     }
@@ -36,12 +36,12 @@ export default function DataChange(props: any) {
           <h4 className="card-title">{l(k.CHANGE_DATA)}</h4>
           <ErrorBanner useError={useError} />
 
-          {store.nameUpdateStatus == 200 ? (
+          {store.nameUpdateStatus === 200 ? (
             <ErrorBanner
               useError={{ data: `${l(k.DATA_UPDATED)}`, error: false }}
             />
           ) : null}
-          {store.nameUpdateStatus != 200 && store.nameUpdateStatus != 0 ? (
+          {store.nameUpdateStatus !== 200 && store.nameUpdateStatus !== 0 ? (
             <ErrorBanner
               useError={{ data: `${l(k.DATA_UPDATED_ERROR)}`, error: true }}
             />

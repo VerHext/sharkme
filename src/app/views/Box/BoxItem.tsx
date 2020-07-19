@@ -1,15 +1,21 @@
 import React from "react";
 import "./style.css";
 import { k, l } from "../../i18n";
-import { useSelector } from "react-redux";
-import * as redux from "../../redux/modules/user";
+import { useDispatch } from "react-redux";
+import * as redux from "../../redux/modules/box";
 import IBox from "../../models/IBox";
 import { useHistory } from "react-router-dom";
 
 export default function BoxItem(props: any) {
-  const user = useSelector(redux.selectData);
   const box = props.box as IBox;
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const setBoxId = () => {
+    history.push("/app/box/" + box.id);
+    dispatch(redux.setBoxTemp(box.id));
+  };
+
   return (
     <>
       <div className="card boxitem">
@@ -24,7 +30,7 @@ export default function BoxItem(props: any) {
             className="divider"
             style={{
               backgroundColor:
-                box.color == null || box.color == "#fff"
+                box.color === null || box.color === "#fff"
                   ? "#3a96bb"
                   : box.color,
             }}
@@ -36,10 +42,10 @@ export default function BoxItem(props: any) {
               <button
                 type="button"
                 className="btn btn-primary btn-open-cardbox"
-                onClick={() => history.push("/app/box/" + box.id)}
+                onClick={() => setBoxId()}
                 style={{
                   backgroundColor:
-                    box.color == null || box.color == "#fff"
+                    box.color === null || box.color === "#fff"
                       ? "#3a96bb"
                       : box.color,
                 }}

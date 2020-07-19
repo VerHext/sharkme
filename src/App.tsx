@@ -1,22 +1,8 @@
-import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
-import { Counter } from "./app/features/counter/Counter";
-import * as user from "./app/redux/modules/user";
+import React, { useEffect } from "react";
 import Layout from "./app/views/Layout";
-import Loader from "react-loader-spinner";
 import "./App.css";
-import { connect } from "react-redux";
-import {
-  Redirect,
-  Route,
-  Router,
-  RouteComponentProps,
-  Switch,
-  withRouter,
-  BrowserRouter,
-} from "react-router-dom";
-import IUser from "./app/models/IUser";
-import { useSelector, useDispatch } from "react-redux";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import * as userRedux from "./app/redux/modules/user";
 import * as boxRedux from "./app/redux/modules/box";
 import PageNotFound from "./app/views/NotFound";

@@ -132,4 +132,8 @@ export const k = {
     DE: "sharkme",
     EN: "sharkme",
   },
+  FROM: {
+    DE: "von",
+    EN: "from",
+  },
 };
