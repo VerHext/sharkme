@@ -13,7 +13,7 @@ export default function Header(props: any) {
     <nav className="navbar navbar-light navbar-expand-md navigation-clean blueHeader">
       <div className="container">
         <Link className={"navbar-brand"} to={"/"}>
-          {l(k.APP_NAME).toUpperCase()}
+          <img src="/images/logo-03.png" />
         </Link>
 
         <button

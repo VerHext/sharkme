@@ -69,9 +69,7 @@ export default function CardList(props: any) {
                   <td>
                     <input
                       type="checkbox"
-                      className="singlechkbox"
-                      name="username"
-                      value="1"
+                      aria-label="Checkbox for following text input"
                     />
                   </td>
                   <td>{card.question}</td>
